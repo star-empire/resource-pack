@@ -1,0 +1,18 @@
+{
+    "providers":[
+        {
+            "type": "bitmap",
+            "file": "minecraft:ffa.png",
+            "ascent": 11,
+            "height": 18,
+            "chars": ["￫"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:starempire.png",
+            "ascent": 11,
+            "height": 32,
+            "chars": ["耀"]
+        }
+    ]
+}
