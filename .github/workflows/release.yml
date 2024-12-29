@@ -29,6 +29,15 @@ jobs:
       - name: Run a one-line script
         run: zip -r project.zip . # Az egész projektet tömöríti
 
+      - name: Check if tag exists
+        id: check_tag
+        run: |
+          if [[ ! $(git describe --tags --abbrev=0) ]]; then
+            echo "No tag found, creating one"
+            git tag "v$(date +'%Y%m%d%H%M%S')" # Ha nincs címke, generálunk egyet
+            git push origin --tags # Pusholjuk a címkét
+          fi
+
       # Runs a set of commands using the runners shell
       - name: Upload ZIP to GitHub Release
         uses: softprops/action-gh-release@v1
